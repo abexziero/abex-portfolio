@@ -52,6 +52,6 @@ Integrasi Git Cloudflare: build npm run build:pages, output out, Node24, SITE_UR
 
 Periksa ID/EN, route404, bahasa/tema, menu/fokus, animasi/reduced motion, gambar, kontak dan HP pada deployment. Preview lokal tidak membuktikan perilaku CDN produksi.
 
-Rollback ke deployment Cloudflare sebelumnya, lalu cek route/kontak lagi. Lihat VERIFICATION.md dan ASSETS.md.
+Rollback ke deployment Cloudflare sebelumnya, lalu cek route/kontak lagi. Lisensi aset tercantum di ASSETS.md.
 
 Jika upload berhasil tetapi cek URL belum lolos (misalnya HTTP522), tunggu lalu jalankan npm.cmd run verify:cloudflare. Pemeriksaan mengulang gangguan sementara dan tidak melakukan upload ulang. Status verified hanya dicatat setelah semua route memberi200.

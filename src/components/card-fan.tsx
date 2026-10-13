@@ -11,8 +11,8 @@ export function CardFan({ children }: { children: ReactNode }) {
       cards.forEach((card, index) => {
         const rotation = [-5, 1, 4][index] ?? 0;
         gsap.fromTo(card, { y: 80, rotation: 0, opacity: 0 }, { y: 0, rotation, opacity: 1, duration: .8, delay: index * .08, ease: "power3.out" });
-        const enter = () => context.add(() => { card.style.zIndex = "5"; gsap.to(card, { y: -18, rotation: 0, scale: 1.03, duration: .3, overwrite: true }); });
-        const leave = () => context.add(() => { card.style.zIndex = String(index === 1 ? 3 : 2); gsap.to(card, { y: 0, rotation, scale: 1, duration: .4, overwrite: true }); });
+        const enter = () => context.add(() => { card.style.zIndex = "5"; gsap.to(card, { y: -18, rotation: 0, scale: 1.03, duration: .3, overwrite: "auto" }); });
+        const leave = () => context.add(() => { card.style.zIndex = String(index === 1 ? 3 : 2); gsap.to(card, { y: 0, rotation, scale: 1, duration: .4, overwrite: "auto" }); });
         card.addEventListener("pointerenter", enter); card.addEventListener("pointerleave", leave); card.addEventListener("focusin", enter); card.addEventListener("focusout", leave);
         listeners.push(() => { card.removeEventListener("pointerenter", enter); card.removeEventListener("pointerleave", leave); card.removeEventListener("focusin", enter); card.removeEventListener("focusout", leave); });
       });
