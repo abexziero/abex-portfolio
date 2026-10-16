@@ -3,15 +3,19 @@ import {test,expect} from '@playwright/test';
 test('real GitHub projects have original images, honest statuses and bilingual routes',async({page,request})=>{
   for(const lang of ['id','en']) {
     await page.goto(`/${lang}/work`);
-    await expect(page.locator('.fan-card')).toHaveCount(2);
+    await expect(page.locator('.fan-card')).toHaveCount(3);
     await expect(page.locator('.fan-card')).not.toContainText(['Placeholder']);
-    for(const slug of ['jelajanime','aplikasi-kasir']) {
+    for(const slug of ['jelajanime','aplikasi-kasir','web-sekolah-modern']) {
       await page.goto(`/${lang}/projects/${slug}`);
       const screenshot=page.locator('.case-gallery img');
       await expect(screenshot).toHaveAttribute('src',new RegExp(slug));
       await expect.poll(()=>screenshot.evaluate(el=>(el as HTMLImageElement).complete&&(el as HTMLImageElement).naturalWidth>0)).toBe(true);
       await expect(page.locator(`.case-external a[href="https://github.com/abexziero/${slug}"]`)).toBeVisible();
-      await expect(page.locator('meta[name="description"]')).toHaveAttribute('content',slug==='jelajanime'?/anime/:/Android/);
+      await expect(page.locator('meta[name="description"]')).toHaveAttribute('content',slug==='jelajanime'?/anime/:slug==='aplikasi-kasir'?/Android/:/CMS/);
+      if(slug==='web-sekolah-modern') {
+        await expect(page.locator('.case-external a[href="https://abexziero.github.io/web-sekolah-modern/"]')).toBeVisible();
+        await expect(page.locator('.case-body')).toContainText(lang==='id'?'Preview publik':'public preview');
+      }
       await page.locator('.language-switch a').click();
       await expect(page).toHaveURL(new RegExp(`/${lang==='id'?'en':'id'}/projects/${slug}$`));
     }
@@ -23,7 +27,7 @@ test('GitHub profile content and screenshots fit mobile, tablet and desktop',asy
   await page.emulateMedia({reducedMotion:'reduce'});
   for(const width of [375,768,1024,1440]) {
     await page.setViewportSize({width,height:812});
-    for(const route of ['/id','/id/work','/id/about','/id/projects/jelajanime','/id/projects/aplikasi-kasir']) {
+    for(const route of ['/id','/id/work','/id/about','/id/projects/jelajanime','/id/projects/aplikasi-kasir','/id/projects/web-sekolah-modern']) {
       await page.goto(route);
       expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
       if(route.endsWith('/about')) {

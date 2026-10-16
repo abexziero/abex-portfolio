@@ -31,7 +31,7 @@ export const ui = {
     demo: "Portofolio demo", placeholder: "Placeholder", heroEyebrow: "FULLSTACK DEVELOPER / WEB & MOBILE",
     heroLine1: "Ide yang bagus.", heroLine2: "Website yang", heroLine3: "berkesan.", heroText: "Mengubah ide menjadi pengalaman digital yang rapi, cepat, dan mudah digunakan. Dari halaman pertama hingga detail terakhir.",
     viewWork: "Jelajahi karya", contact: "Mari bicara", heroCard: "Eksplorasi terbaru", scroll: "Gulir untuk menjelajah", index: "PORTOFOLIO / 2026",
-    workEyebrow: "01 / KARYA PILIHAN", workTitle: "Dibangun dengan", workAccent: "tujuan.", workText: "Dua proyek personal dari GitHub: katalog anime berbasis API dan aplikasi kasir Android offline.", workHint: "Gulir untuk melihat karya", caseStudy: "Lihat studi kasus", demoNotice: "Proyek personal / bukan pekerjaan klien",
+    workEyebrow: "01 / KARYA PILIHAN", workTitle: "Dibangun dengan", workAccent: "tujuan.", workText: "Tiga proyek dari GitHub: katalog anime berbasis API, aplikasi kasir Android offline, dan website sekolah dengan CMS.", workHint: "Gulir untuk melihat karya", caseStudy: "Lihat studi kasus", demoNotice: "Proyek personal / bukan pekerjaan klien",
     servicesPageTitle: "Layanan & Cara Kerja", servicesPageIntro: "Pengembangan aplikasi web dan mobile, dari antarmuka hingga data. Berikut layanan yang saya kerjakan dan pendekatan dalam membangun setiap fitur.", servicesEyebrow: "02 / LAYANAN", servicesTitle: "Dari konsep", servicesAccent: "ke layar.", servicesText: "Fondasi yang kuat. Antarmuka yang jelas. Interaksi yang terasa alami.",
     services: [
   {
@@ -65,7 +65,7 @@ export const ui = {
     demo: "Demo portfolio", placeholder: "Placeholder", heroEyebrow: "FULLSTACK DEVELOPER / WEB & MOBILE",
     heroLine1: "Good ideas.", heroLine2: "Memorable", heroLine3: "websites.", heroText: "Turning ideas into considered, fast, and intuitive digital experiences. From the first page to the very last detail.",
     viewWork: "Explore the work", contact: "Let's talk", heroCard: "Latest exploration", scroll: "Scroll to explore", index: "PORTFOLIO / 2026",
-    workEyebrow: "01 / SELECTED WORK", workTitle: "Built with", workAccent: "purpose.", workText: "Two personal projects from GitHub: an API-driven anime catalog and an offline Android point-of-sale app.", workHint: "Scroll to explore the work", caseStudy: "View case study", demoNotice: "Personal project / not client work",
+    workEyebrow: "01 / SELECTED WORK", workTitle: "Built with", workAccent: "purpose.", workText: "Three projects from GitHub: an API-driven anime catalog, an offline Android point-of-sale app, and a school website with a CMS.", workHint: "Scroll to explore the work", caseStudy: "View case study", demoNotice: "Personal project / not client work",
     servicesPageTitle: "Services & Process", servicesPageIntro: "Web and mobile application development, from interfaces to data. Explore the services I offer and my approach to building each feature.", servicesEyebrow: "02 / SERVICES", servicesTitle: "From concept", servicesAccent: "to screen.", servicesText: "A solid foundation. A clear interface. Interactions that feel natural.",
     services: [
   {
@@ -203,5 +203,53 @@ export const projects: Project[] = [
     ],
     "demo": null,
     "code": "https://github.com/abexziero/aplikasi-kasir"
+  },
+  {
+    "placeholder": false,
+    "status": {
+      "id": "Proyek personal / Studi implementasi",
+      "en": "Personal project / Implementation study"
+    },
+    "year": 2026,
+    "slug": "web-sekolah-modern",
+    "title": "Web Sekolah Modern",
+    "category": {
+      "id": "Web / Portal sekolah & CMS",
+      "en": "Web / School portal & CMS"
+    },
+    "summary": {
+      "id": "Portal informasi sekolah dan CMS untuk MA Annur Samarinda, dengan berita, agenda, galeri, serta alur draft, tinjauan, dan publikasi.",
+      "en": "A school information portal and CMS for MA Annur Samarinda, with news, events, a gallery, and draft, review, and publishing workflows."
+    },
+    "role": {
+      "id": "Pengembangan website responsif, animasi, CMS, autentikasi, dan penyimpanan MariaDB.",
+      "en": "Responsive website development, motion, CMS, authentication, and MariaDB storage."
+    },
+    "problem": {
+      "id": "Memudahkan pengunjung menemukan informasi sekolah dan operator memperbarui konten, sambil menjaga draft serta revisi tetap privat hingga diterbitkan.",
+      "en": "Helping visitors find school information and operators update content, while keeping drafts and revisions private until publication."
+    },
+    "approach": {
+      "id": "Next.js App Router, React, TypeScript, dan Tailwind CSS dengan animasi GSAP. CMS memakai MariaDB, autentikasi Better Auth dengan MFA/TOTP wajib, pembagian peran, autosave draft, pratinjau, tinjauan, dan publikasi berbasis snapshot revisi.",
+      "en": "Next.js App Router, React, TypeScript, and Tailwind CSS with GSAP motion. The CMS uses MariaDB, Better Auth with mandatory MFA/TOTP, role-based access, draft autosave, previews, review, and revision-snapshot publishing."
+    },
+    "results": {
+      "id": "Kode dan preview GitHub Pages tersedia. Preview publik menampilkan halaman informasi dan berita contoh; login, dashboard, database, dan media privat memerlukan server Next.js. Sebagian materi masih contoh yang perlu disahkan sekolah. PPDB online, rapor, keuangan, dan alumni belum termasuk. Tidak ada klaim peluncuran resmi atau metrik pengguna.",
+      "en": "The code and a public preview on GitHub Pages are available. The preview shows information pages and sample news; login, the dashboard, database, and private media require a Next.js server. Some materials are examples awaiting school approval. Online admissions, report cards, finance, and alumni features are not included. No official launch or user metrics are claimed."
+    },
+    "tech": ["Next.js", "React", "TypeScript", "Tailwind CSS", "GSAP", "MariaDB"],
+    "images": [
+      {
+        "src": "/projects/web-sekolah-modern.webp",
+        "width": 1920,
+        "height": 978,
+        "alt": {
+          "id": "Screenshot asli beranda Web Sekolah Modern untuk MA Annur Samarinda dari README proyek",
+          "en": "Original Web Sekolah Modern homepage screenshot for MA Annur Samarinda from the project README"
+        }
+      }
+    ],
+    "demo": "https://abexziero.github.io/web-sekolah-modern/",
+    "code": "https://github.com/abexziero/web-sekolah-modern"
   }
 ];
