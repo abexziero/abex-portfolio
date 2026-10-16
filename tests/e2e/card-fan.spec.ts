@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-for (const [route, count] of [["work", 2], ["experiments", 3], ["snippets", 3]] as const) {
+for (const [route, count] of [["work", 3], ["experiments", 3], ["snippets", 3]] as const) {
   test(`${route}: interacting during entry never leaves cards transparent`, async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.clock.install();
